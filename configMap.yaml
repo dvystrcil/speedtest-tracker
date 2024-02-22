@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  labels:
+    app.kubernetes.io/part-of: speedtest-tracker
+    app.kubernetes.io/name: speedtest-tracker-configmap    
+    app.kubernetes.io/component: configmap
+  name: speedtest-tracker-configmap  
+  namespace: speedtest-tracker
+data:
+  TZ: 'America/Los_Angeles'
+  PUID: 1000
+  PGID: 1000
+  DB_CONNECTION: sqlite
+ 

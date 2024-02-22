@@ -1,0 +1,46 @@
+apiVersion: networking.istio.io/v1beta1
+kind: Gateway
+metadata:
+  name: speedtest-tracker-gateway
+  namespace: speedtest-tracker
+spec:
+  selector:
+    istio: ingress
+  servers:
+  - port:
+      number: 443
+      name: https-long
+      protocol: HTTPS
+    tls:
+      mode: SIMPLE
+      credentialName: ingress-cert-production-tls
+    hosts:
+    - "speedtest.sirddail.net"
+---
+apiVersion: networking.istio.io/v1beta1
+kind: VirtualService
+metadata:
+  name: speedtest-tracker-vs
+  namespace: speedtest-tracker
+spec:
+  hosts:
+  - "speedtest.sirddail.net"
+  gateways:
+  - speedtest-tracker-gateway
+  http:
+  - route:
+    - destination:
+        host: speedtest-tracker-server
+        port:
+          number: 8080
+---
+apiVersion: networking.istio.io/v1beta1
+kind: DestinationRule
+metadata:
+  name: speedtest-tracker
+  namespace: speedtest-tracker
+spec:
+  host: speedtest-tracker
+  trafficPolicy:
+    tls:
+      mode: DISABLE
