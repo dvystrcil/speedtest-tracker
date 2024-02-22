@@ -9,7 +9,7 @@ metadata:
 spec:
   type: LoadBalancer #ClusterIP
   ports:
-    - port: 3334
+    - port: 8080
       targetPort: http
       protocol: TCP
       name: http
@@ -50,7 +50,7 @@ spec:
             - name: http
               containerPort: 8080
               protocol: TCP
-           volumeMounts:
+          volumeMounts:
             - name: tmp
               mountPath: /tmp
             - name: config
