@@ -90,13 +90,13 @@ spec:
             capabilities:
               drop:
                 - ALL
-            readOnlyRootFilesystem: true
-      securityContext:
-        fsGroup: 65534
-        runAsUser: 65534
-        runAsGroup: 65534
-        seccompProfile:
-          type: RuntimeDefault
+      #       readOnlyRootFilesystem: true
+      # securityContext:
+      #   fsGroup: 65534
+      #   runAsUser: 65534
+      #   runAsGroup: 65534
+      #   seccompProfile:
+      #     type: RuntimeDefault
       volumes:
         - name: config 
           emptyDir:
