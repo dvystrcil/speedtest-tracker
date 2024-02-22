@@ -51,10 +51,10 @@ spec:
               containerPort: 8080
               protocol: TCP
           volumeMounts:
-            - name: tmp
-              mountPath: /tmp
-            - name: run
-              mountPath: /run
+            # - name: tmp
+            #   mountPath: /tmp
+            # - name: run
+            #   mountPath: /run
             - name: config
               mountPath: /config
           livenessProbe:
@@ -101,9 +101,9 @@ spec:
         - name: config 
           emptyDir:
             {}
-        - name: tmp
-          emptyDir:
-            {}
-        - name: run
-          emptyDir:
-            {}
+        # - name: tmp
+        #   emptyDir:
+        #     {}
+        # - name: run
+        #   emptyDir:
+        #     {}
