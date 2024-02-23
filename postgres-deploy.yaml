@@ -38,13 +38,6 @@ spec:
       labels:
         app.kubernetes.io/name: speedtest-tracker-postgres
     spec:
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-            - matchExpressions:
-              - key: gaptech.com/environment-stage
-                operator: Exists
       containers:
         - name: postgres
           image: postgres:16.2
