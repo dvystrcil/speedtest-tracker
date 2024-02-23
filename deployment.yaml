@@ -46,7 +46,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: speedtest-tracker-configmap
-            envFrom:
             - configMapRef:
                 name: speedtest-tracker-postgres-config
             - secretRef:
