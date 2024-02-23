@@ -61,27 +61,27 @@ spec:
             #   mountPath: /run
             - name: config
               mountPath: /config
-          livenessProbe:
-            failureThreshold: 3
-            initialDelaySeconds: 0
-            periodSeconds: 10
-            tcpSocket:
-              port: 8080
-            timeoutSeconds: 1
-          readinessProbe:
-            failureThreshold: 3
-            initialDelaySeconds: 0
-            periodSeconds: 10
-            tcpSocket:
-              port: 8080
-            timeoutSeconds: 1
-          startupProbe:
-            failureThreshold: 30
-            initialDelaySeconds: 0
-            periodSeconds: 5
-            tcpSocket:
-              port: 8080
-            timeoutSeconds: 1
+          # livenessProbe:
+          #   failureThreshold: 3
+          #   initialDelaySeconds: 0
+          #   periodSeconds: 10
+          #   tcpSocket:
+          #     port: 8080
+          #   timeoutSeconds: 1
+          # readinessProbe:
+          #   failureThreshold: 3
+          #   initialDelaySeconds: 0
+          #   periodSeconds: 10
+          #   tcpSocket:
+          #     port: 8080
+          #   timeoutSeconds: 1
+          # startupProbe:
+          #   failureThreshold: 30
+          #   initialDelaySeconds: 0
+          #   periodSeconds: 5
+          #   tcpSocket:
+          #     port: 8080
+          #   timeoutSeconds: 1
           resources:
             requests:
               cpu: 125m
@@ -95,19 +95,31 @@ spec:
               drop:
                 - ALL
       #       readOnlyRootFilesystem: true
-      # securityContext:
-      #   fsGroup: 65534
-      #   runAsUser: 65534
-      #   runAsGroup: 65534
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        runAsGroup: 1000
       #   seccompProfile:
       #     type: RuntimeDefault
       volumes:
-        - name: config 
-          emptyDir:
-            {}
+        - name: speedtest-tracker
+          persistentVolumeClaim:
+            claimName: speedtest-tracker
         # - name: tmp
         #   emptyDir:
         #     {}
         # - name: run
         #   emptyDir:
         #     {}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: speedtest-tracker
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 5Gi
+---
