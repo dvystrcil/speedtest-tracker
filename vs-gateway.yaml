@@ -24,13 +24,13 @@ metadata:
   namespace: speedtest-tracker
 spec:
   hosts:
-  - "speedtest.sirddail.net"
+  - speedtest.sirddail.net
   gateways:
   - speedtest-tracker-gateway
   http:
   - route:
     - destination:
-        host: speedtest-tracker-server
+        host: speedtest-tracker
         port:
           number: 8080
 ---
