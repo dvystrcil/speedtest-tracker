@@ -55,11 +55,7 @@ spec:
               containerPort: 8080
               protocol: TCP
           volumeMounts:
-            # - name: tmp
-            #   mountPath: /tmp
-            # - name: run
-            #   mountPath: /run
-            - name: config
+            - name: speedtest-tracker
               mountPath: /config
           # livenessProbe:
           #   failureThreshold: 3
