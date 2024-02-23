@@ -57,8 +57,8 @@ spec:
           volumeMounts:
             - name: speedtest-tracker
               mountPath: /config
-            # - name: run-s6
-            #   mountPath: /run/s6
+            - name: nginx
+              mountPath: /var/lib/nginx
             # - name: run-service
             #   mountPath: /run/service
           # livenessProbe:
@@ -108,7 +108,7 @@ spec:
         # - name: tmp
         #   emptyDir:
         #     {}
-        - name: run-s6
+        - name: nginx
           emptyDir:
             {}
         - name: run-service
