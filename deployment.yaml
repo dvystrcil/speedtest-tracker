@@ -57,6 +57,8 @@ spec:
           volumeMounts:
             - name: speedtest-tracker
               mountPath: /config
+            - name: run
+              mountPath: /run
           # livenessProbe:
           #   failureThreshold: 3
           #   initialDelaySeconds: 0
@@ -104,9 +106,9 @@ spec:
         # - name: tmp
         #   emptyDir:
         #     {}
-        # - name: run
-        #   emptyDir:
-        #     {}
+        - name: run
+          emptyDir:
+            {}
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
