@@ -5,16 +5,18 @@ metadata:
     app.kubernetes.io/part-of: speedtest-tracker
     app.kubernetes.io/name: speedtest-tracker-configmap    
     app.kubernetes.io/component: configmap
+  annotations:
+    reloader.stakater.com/auto: "true"
   name: speedtest-tracker-configmap  
   namespace: speedtest-tracker
 data:
   TZ: 'America/Los_Angeles'
   PUID: '1000'
   PGID: '1000'
-  DB_CONNECTION: pgsql
-  DB_HOST: speedtest-tracker-postgres
-  DB_PORT: "5432"
-  DB_DATABASE: speedtest_tracker
-  DB_USERNAME: speedy
+  DB_CONNECTION: sqlite #pgsql
+  # DB_HOST: speedtest-tracker-postgres
+  # DB_PORT: "5432"
+  # DB_DATABASE: speedtest_tracker
+  # DB_USERNAME: speedy
   
  
