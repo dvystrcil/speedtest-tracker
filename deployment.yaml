@@ -95,7 +95,7 @@ spec:
       #       readOnlyRootFilesystem: true
       securityContext:
         fsGroup: 65533
-        runAsUser: 65533
+        # runAsUser: 65533
         runAsGroup: 65533
       #   seccompProfile:
       #     type: RuntimeDefault
