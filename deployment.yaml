@@ -37,7 +37,15 @@ spec:
       labels:
         app.kubernetes.io/name: speedtest-tracker
     spec:
-      dnsPolicy: ClusterFirst
+      dnsPolicy: None
+      dnsConfig:
+        nameservers:
+          - 1.1.1.1
+        searches:
+          - speedtest-tracker.svc.cluster.local
+        options:
+          - name: ndots
+            value: "5"
       enableServiceLinks: true
       containers:
         - name: speedtest-tracker
