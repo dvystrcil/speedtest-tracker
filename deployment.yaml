@@ -57,10 +57,10 @@ spec:
           volumeMounts:
             - name: speedtest-tracker
               mountPath: /config
-            - name: run-s6
-              mountPath: /run/s6
-            - name: run-service
-              mountPath: /run/service
+            # - name: run-s6
+            #   mountPath: /run/s6
+            # - name: run-service
+            #   mountPath: /run/service
           # livenessProbe:
           #   failureThreshold: 3
           #   initialDelaySeconds: 0
@@ -95,10 +95,10 @@ spec:
               drop:
                 - ALL
       #       readOnlyRootFilesystem: true
-      securityContext:
-        fsGroup: 1000
-        runAsUser: 1000
-        runAsGroup: 1000
+      # securityContext:
+      #   fsGroup: 1000
+      #   runAsUser: 1000
+      #   runAsGroup: 1000
       #   seccompProfile:
       #     type: RuntimeDefault
       volumes:
