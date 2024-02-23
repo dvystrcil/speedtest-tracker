@@ -41,6 +41,7 @@ spec:
       dnsConfig:
         nameservers:
           - 1.1.1.1
+          - 10.96.0.10
         searches:
           - speedtest-tracker.svc.cluster.local
         options:
