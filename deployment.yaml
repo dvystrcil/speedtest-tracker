@@ -46,6 +46,11 @@ spec:
           envFrom:
             - configMapRef:
                 name: speedtest-tracker-configmap
+            envFrom:
+            - configMapRef:
+                name: speedtest-tracker-postgres-config
+            - secretRef:
+                name: postgres-secrets
           ports:
             - name: http
               containerPort: 8080

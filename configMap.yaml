@@ -11,5 +11,6 @@ data:
   TZ: 'America/Los_Angeles'
   PUID: '1000'
   PGID: '1000'
-  DB_CONNECTION: sqlite
+  DB_CONNECTION: pgsql
+  
  
