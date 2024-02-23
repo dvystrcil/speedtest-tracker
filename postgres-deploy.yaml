@@ -93,7 +93,6 @@ metadata:
     app.kubernetes.io/part-of: speedtest-tracker
     app.kubernetes.io/component: database
 spec:
-  storageClassName: azurefile-csi
   accessModes:
     - ReadWriteMany  
   resources:
