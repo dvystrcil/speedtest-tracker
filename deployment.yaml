@@ -46,8 +46,6 @@ spec:
           envFrom:
             - configMapRef:
                 name: speedtest-tracker-configmap
-            - configMapRef:
-                name: speedtest-tracker-postgres-config
             - secretRef:
                 name: postgres-secrets
           ports:

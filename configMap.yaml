@@ -12,5 +12,9 @@ data:
   PUID: '1000'
   PGID: '1000'
   DB_CONNECTION: pgsql
+  DB_HOST: speedtest-tracker-postgres
+  DB_PORT: "5432"
+  DB_DATABASE: speedtest_tracker
+  DB_USERNAME: speedy
   
  
