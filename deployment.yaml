@@ -57,8 +57,10 @@ spec:
           volumeMounts:
             - name: speedtest-tracker
               mountPath: /config
-            - name: nginx
-              mountPath: /var/lib/nginx
+            - name: nginx-logs
+              mountPath: /var/lib/nginx/logs
+            - name: nginx-tmp
+              mountPath: /var/lib/nginx/tmp
             # - name: run-service
             #   mountPath: /run/service
           # livenessProbe:
@@ -108,10 +110,10 @@ spec:
         # - name: tmp
         #   emptyDir:
         #     {}
-        - name: nginx
+        - name: nginx-logs
           emptyDir:
             {}
-        - name: run-service
+        - name: nginx-tmp
           emptyDir:
             {}
 ---
