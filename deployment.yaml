@@ -2,6 +2,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: speedtest-tracker
+  namespace: speedtest-tracker
   labels:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: speedtest-tracker
@@ -20,6 +21,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: speedtest-tracker
+  namespace: speedtest-tracker
   labels:
     app.kubernetes.io/component: server
     app.kubernetes.io/name: speedtest-tracker
@@ -102,8 +104,8 @@ spec:
           #     drop:
           #       - ALL
       #       readOnlyRootFilesystem: true
-      securityContext:
-        fsGroup: 65533
+      # securityContext:
+      #   fsGroup: 65533
         # runAsUser: 65533
         #runAsGroup: 65533
       #   seccompProfile:
@@ -126,6 +128,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: speedtest-tracker
+  namespace: speedtest-tracker
 spec:
   accessModes:
     - ReadWriteOnce
