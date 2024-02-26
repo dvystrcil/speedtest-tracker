@@ -13,10 +13,10 @@ data:
   TZ: 'America/Los_Angeles'
   PUID: '1000'
   PGID: '1000'
-  DB_CONNECTION: sqlite #pgsql
-  # DB_HOST: speedtest-tracker-postgres
-  # DB_PORT: "5432"
-  # DB_DATABASE: speedtest_tracker
-  # DB_USERNAME: speedy
+  DB_CONNECTION: pgsql
+  DB_HOST: speedtest-tracker-postgres
+  DB_PORT: "5432"
+  DB_DATABASE: speedtest_tracker
+  DB_USERNAME: speedy
   
  
