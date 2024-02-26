@@ -43,9 +43,10 @@ spec:
       dnsConfig:
         nameservers:
           - 1.1.1.1
-          - 10.96.0.10
+          - 127.0.0.53
         searches:
           - speedtest-tracker.svc.cluster.local
+          - speedtest-tracker-postgres.svc.cluster.local
         options:
           - name: ndots
             value: "5"
