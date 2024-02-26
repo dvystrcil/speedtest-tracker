@@ -8,7 +8,7 @@ metadata:
     app.kubernetes.io/name: speedtest-tracker
     app.kubernetes.io/part-of: speedtest-tracker
 spec:
-  type: ClusterIP
+  type: LoadBalancer #ClusterIP
   ports:
     - port: 8080
       targetPort: http
