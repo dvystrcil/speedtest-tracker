@@ -112,16 +112,7 @@ spec:
       #   seccompProfile:
       #     type: RuntimeDefault
       volumes:
-        # - name: speedtest-tracker
-        #   persistentVolumeClaim:
-        #     claimName: speedtest-tracker
-        # - name: tmp
-        #   emptyDir:
-        #     {}
         - name: config
-          emptyDir:
-            {}
-        - name: nginx-tmp
           emptyDir:
             {}
 ---
