@@ -17,15 +17,29 @@ spec:
   selector:
     app.kubernetes.io/name: speedtest-tracker
 ---
-apiVersion: apps/v1
-kind: Deployment
+apiVersion: v1
+kind: ServiceAccount
 metadata:
-  name: speedtest-tracker
-  namespace: speedtest-tracker
   labels:
-    app.kubernetes.io/component: server
+    app.kubernetes.io/component: service-account
+    app.kubernetes.io/instance: speedtest-tracker
     app.kubernetes.io/name: speedtest-tracker
     app.kubernetes.io/part-of: speedtest-tracker
+  name: speedtest-tracker
+  namespace: speedtest-tracker
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:  
+  labels:
+    app.kubernetes.io/component: server
+    app.kubernetes.io/instance: speedtest-tracker
+    app.kubernetes.io/name: speedtest-tracker
+    app.kubernetes.io/part-of: speedtest-tracker
+  annotations:
+    reloader.stakater.com/auto: "true"
+  name: speedtest-tracker
+  namespace: speedtest-tracker
 spec:
   revisionHistoryLimit: 3
   replicas: 1
@@ -111,6 +125,8 @@ spec:
         #runAsGroup: 65533
       #   seccompProfile:
       #     type: RuntimeDefault
+      serviceAccount: speedtest-tracker
+      serviceAccountName: speedtest-tracker
       volumes:
         - name: config
           emptyDir:

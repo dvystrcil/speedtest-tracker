@@ -3,6 +3,7 @@ kind: ConfigMap
 metadata:
   labels:
     app.kubernetes.io/part-of: speedtest-tracker
+    app.kubernetes.io/instance: speedtest-tracker
     app.kubernetes.io/name: speedtest-tracker-configmap    
     app.kubernetes.io/component: configmap
   annotations:
