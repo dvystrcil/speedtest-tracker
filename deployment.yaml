@@ -85,13 +85,13 @@ spec:
             #   mountPath: /var/lib/nginx
             # - name: run-service
             #   mountPath: /run/service
-          # livenessProbe:
-          #   failureThreshold: 3
-          #   initialDelaySeconds: 0
-          #   periodSeconds: 10
-          #   tcpSocket:
-          #     port: 8080
-          #   timeoutSeconds: 1
+          livenessProbe:
+            failureThreshold: 3
+            initialDelaySeconds: 10
+            periodSeconds: 10
+            tcpSocket:
+              port: 80
+            timeoutSeconds: 1
           # readinessProbe:
           #   failureThreshold: 3
           #   initialDelaySeconds: 0
