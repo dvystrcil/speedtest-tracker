@@ -32,7 +32,7 @@ spec:
     - destination:
         host: speedtest-tracker
         port:
-          number: 8080
+          number: 443
 ---
 apiVersion: networking.istio.io/v1beta1
 kind: DestinationRule
