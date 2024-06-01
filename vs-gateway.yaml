@@ -43,4 +43,4 @@ spec:
   host: speedtest-tracker
   trafficPolicy:
     tls:
-      mode: DISABLE
+      mode: ISTIO_MUTUAL
