@@ -74,6 +74,8 @@ spec:
             - configMapRef:
                 name: speedtest-tracker-configmap
             - secretRef:
+                name: speedtest-tracker-api-key
+            - secretRef:
                 name: postgres-secrets
           ports:
             - name: http
