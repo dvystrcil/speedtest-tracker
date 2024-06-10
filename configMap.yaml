@@ -12,6 +12,8 @@ metadata:
   namespace: speedtest-tracker
 data:
   TZ: 'America/Los_Angeles'
+  APP_TIMEZONE: 'America/Los_Angeles'
+  DISPLAY_TIMEZONE: 'America/Los_Angeles'
   PUID: '1000'
   PGID: '1000'
   DB_CONNECTION: pgsql
