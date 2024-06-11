@@ -122,10 +122,10 @@ spec:
           #     drop:
           #       - ALL
       #       readOnlyRootFilesystem: true
-      # securityContext:
-      #   fsGroup: 1000
-      #   runAsUser: 1000
-      #   runAsGroup: 1000
+      securityContext:
+        fsGroup: 1000
+        runAsUser: 1000
+        runAsGroup: 1000
       #   seccompProfile:
       #     type: RuntimeDefault
       serviceAccount: speedtest-tracker
