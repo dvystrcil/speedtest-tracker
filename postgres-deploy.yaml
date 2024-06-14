@@ -12,9 +12,10 @@ spec:
   selector:
     app.kubernetes.io/name: speedtest-tracker-postgres
   ports:
-  - port: 443
+  - name: http-speedtest-tracker
+    port: 443
     protocol: TCP
-    targetPort: 5432
+    targetPort: http
   type: ClusterIP 
 ---
 apiVersion: apps/v1
@@ -42,7 +43,8 @@ spec:
           image: postgres:16.2
           imagePullPolicy: "IfNotPresent"
           ports:
-            - containerPort: 5432  
+            - name: http
+              containerPort: 5432  
           securityContext:
             capabilities:
               drop:
