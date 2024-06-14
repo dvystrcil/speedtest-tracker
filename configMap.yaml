@@ -21,5 +21,8 @@ data:
   DB_PORT: "443"
   DB_DATABASE: speedtest_tracker
   DB_USERNAME: speedy
+  SPEEDTEST_SCHEDULE: "0 * * * *" # can be represented as a cron schedule same as before.
+  #SPEEDTEST_SERVERS:  # you can add one or many servers separated by a comma (i.e. "123456,654321,987654").
+  PRUNE_RESULTS_OLDER_THAN: "30"
   
  
