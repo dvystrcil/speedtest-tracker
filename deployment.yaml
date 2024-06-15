@@ -15,6 +15,7 @@ spec:
       targetPort: http
       protocol: TCP
       name: https
+      appProtocol: http
   selector:
     app.kubernetes.io/name: speedtest-tracker
 ---
