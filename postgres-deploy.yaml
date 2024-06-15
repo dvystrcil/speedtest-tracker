@@ -16,6 +16,7 @@ spec:
     port: 5432
     protocol: TCP
     targetPort: http
+    appProtocol: http
   type: ClusterIP 
 ---
 apiVersion: apps/v1
