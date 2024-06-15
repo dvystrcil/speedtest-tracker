@@ -12,11 +12,11 @@ spec:
   selector:
     app.kubernetes.io/name: speedtest-tracker-postgres
   ports:
-  - name: http-postgres
+  - name: postgres
     port: 5432
     protocol: TCP
     targetPort: http
-    appProtocol: http
+    appProtocol: tcp
   type: ClusterIP 
 ---
 apiVersion: apps/v1
