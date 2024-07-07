@@ -69,7 +69,7 @@ spec:
       # enableServiceLinks: true
       containers:
         - name: speedtest-tracker
-          image: lscr.io/linuxserver/speedtest-tracker:v0.20.7-ls32
+          image: lscr.io/linuxserver/speedtest-tracker:v0.20.7-ls33
           imagePullPolicy: IfNotPresent
           envFrom:
             - configMapRef:
