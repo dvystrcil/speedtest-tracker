@@ -1,0 +1,16 @@
+---
+apiVersion: bitnami.com/v1alpha1
+kind: SealedSecret
+metadata:
+  creationTimestamp: null
+  name: speedtest-tracker-app-key
+  namespace: speedtest-tracker
+spec:
+  encryptedData:
+    APP_KEY: AgAlyf39erfqpwJzw5LOQHbqj6u4tztkYZNreUVrWSDr/f46yq2ILaiopwhfzzwdNraHspM8l6bKszFDXcz6zbT0Ch+Sy0O/nwMnXskhElM09amMPnDVwb3ki9pj9lIi5yTMDArm0dnRJGy+BT+amTNzkZfFn/wFFyBeN0xo1e/BmiLMugrjwWhRunZbR4V2XTOPHnoCeQLuoiPi3iqAynnmKve18Sz1BHBf2boy0QE4+fgmKIUlP9ZiDRL7if+WqjVjqvH83PP0mlelJhIBS9n/pFX7NaU2A2ODbkYWJLBYvfpEfSYPDgPL98e5/6YWDrVPiKWZWntwc6A9SHFpFRX8cA8N3HpAmImnVkdDU+m9JaqfWIks4LcXiifQHVh+JiJi9EMLUducaoBHPt3TYXTEEKTlU+nhQZ+ro8sf90vOvhnwACVoF2OZC/SGfSEXnNJQY/rPUdPG6MlqM5DVoc1xBWTQQNqfEl9JoVcRAJeKhvJKN4DbTehbVsEs7iFp0MYlNclObvPt3JZ7KWSFl7P4uS3792z14u5Z+Cq4rWqRS7cbXVnfuXjcDQHWCAcGoQ9B239BigIKbM6p55SNCrS/8ApgvtqrPE8BTqfZURB7Nc4zSFie8ch9OPIeMhI3cdUT1sZTPWeLXvJDRkIlhdkMRqT/2XqdLDouh1qDGLMx9xN4lt1K7Ee5cE/HIAf9pZtBs7G0gElJx8cCb/De2FCpK586HpWE9X9xOZynwsWBwkNOo6ZbFfp2AX99RNiuJBaBFDc=
+  template:
+    metadata:
+      creationTimestamp: null
+      name: speedtest-tracker-app-key
+      namespace: speedtest-tracker
+    type: Opaque
